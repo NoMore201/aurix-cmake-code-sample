@@ -1,0 +1,92 @@
+---
+Checks: "*,\
+  -google-readability-todo,\
+  -altera-*,\
+  -fuchsia-*,\
+  -llvm-header-guard,\
+  -llvm-include-order,\
+  -llvmlibc-*,\
+  -hicpp-no-assembler,\
+  -modernize-use-nodiscard,\
+  -modernize-use-trailing-return-type,\
+  -modernize-macro-to-enum,\
+  -misc-non-private-member-variables-in-classes,\
+  -misc-include-cleaner,\
+  -cppcoreguidelines-avoid-non-const-global-variables,\
+  -cppcoreguidelines-macro-to-enum,\
+  -modernize-macro-to-enum,\
+  -hicpp-no-assembler,\
+  -readability-redundant-control-flow,\
+  -readability-avoid-const-params-in-decls"
+WarningsAsErrors: ''
+CheckOptions:
+  bugprone-argument-comment.StrictMode: true
+  bugprone-argument-comment.CommentBoolLiterals: true
+  bugprone-misplaced-widening-cast.CheckImplicitCasts: true
+  bugprone-sizeof-expression.WarnOnSizeOfIntegerExpression: true
+  bugprone-suspicious-string-compare.WarnOnLogicalNotComparison: true
+  readability-simplify-boolean-expr.ChainedConditionalReturn: true
+  readability-simplify-boolean-expr.ChainedConditionalAssignment: true
+  readability-uniqueptr-delete-release.PreferResetCall: true
+  cppcoreguidelines-init-variables.MathHeader: <cmath>'
+  cppcoreguidelines-narrowing-conversions.PedanticMode: true
+  readability-else-after-return.WarnOnUnfixable: true
+  readability-else-after-return.WarnOnConditionVariables: true
+  readability-inconsistent-declaration-parameter-name.Strict: true
+  readability-qualified-auto.AddConstToQualified: true
+  readability-redundant-access-specifiers.CheckFirstDeclaration: true
+  readability-identifier-naming.AbstractClassCase: "CamelCase"
+  readability-identifier-naming.ClassCase: "CamelCase"
+  readability-identifier-naming.ClassConstantCase: "camelBack"
+  readability-identifier-naming.ClassMemberCase: "camelBack"
+  readability-identifier-naming.ClassMethodCase: "camelBack"
+  readability-identifier-naming.ConstantCase: "camelBack"
+  readability-identifier-naming.ConstantMemberCase: "camelBack"
+  readability-identifier-naming.ConstantParameterCase: "camelBack"
+  readability-identifier-naming.ConstantPointerParameterCase: "camelBack"
+  readability-identifier-naming.ConstexprFunctionCase: "camelBack"
+  readability-identifier-naming.ConstexprMethodCase: "camelBack"
+  readability-identifier-naming.ConstexprVariableCase: "camelBack"
+  readability-identifier-naming.EnumCase: "UPPER_CASE"
+  readability-identifier-naming.EnumConstantCase: "UPPER_CASE"
+  readability-identifier-naming.FunctionCase: "aNy_CasE"
+  readability-identifier-naming.GlobalConstantCase: "aNy_CasE"
+  readability-identifier-naming.GlobalConstantPointerCase: "camelBack"
+  readability-identifier-naming.GlobalFunctionCase: "aNy_CasE"
+  readability-identifier-naming.GlobalPointerCase: "camelBack"
+  readability-identifier-naming.GlobalVariableCase: "aNy_CasE"
+  readability-identifier-naming.InlineNamespaceCase: "lower_case"
+  readability-identifier-naming.LocalConstantCase: "aNy_CasE"
+  readability-identifier-naming.LocalConstantPointerCase: "camelBack"
+  readability-identifier-naming.LocalPointerCase: "camelBack"
+  readability-identifier-naming.LocalVariableCase: "aNy_CasE"
+  readability-identifier-naming.MacroDefinitionCase: "UPPER_CASE"
+  readability-identifier-naming.MemberCase: "camelBack"
+  readability-identifier-naming.MethodCase: "camelBack"
+  readability-identifier-naming.NamespaceCase: "CamelCase"
+  readability-identifier-naming.ParameterCase: "camelBack"
+  readability-identifier-naming.ParameterPackCase: "lower_case"
+  readability-identifier-naming.PointerParameterCase: "camelBack"
+  readability-identifier-naming.PrivateMemberCase: "camelBack"
+  readability-identifier-naming.PrivateMemberPrefix: "m_"
+  readability-identifier-naming.PrivateMethodCase: "camelBack"
+  readability-identifier-naming.ProtectedMemberCase: "camelBack"
+  readability-identifier-naming.ProtectedMemberPrefix: "m_"
+  readability-identifier-naming.ProtectedMethodCase: "camelBack"
+  readability-identifier-naming.PublicMemberCase: "camelBack"
+  readability-identifier-naming.PublicMethodCase: "camelBack"
+  readability-identifier-naming.ScopedEnumConstantCase: "CamelCase"
+  readability-identifier-naming.StaticConstantCase: "aNy_CasE"
+  readability-identifier-naming.StaticVariableCase: "aNy_CasE"
+  readability-identifier-naming.StructCase: "UPPER_CASE"
+  readability-identifier-naming.TemplateParameterCase: "CamelCase"
+  readability-identifier-naming.TemplateTemplateParameterCase: "CamelCase"
+  readability-identifier-naming.TypeAliasCase: "CamelCase"
+  readability-identifier-naming.TypedefCase: "UPPER_CASE"
+  readability-identifier-naming.TypedefSuffix: "_T"
+  readability-identifier-naming.TypeTemplateParameterCase: "CamelCase"
+  readability-identifier-naming.UnionCase: "UPPER_CASE"
+  readability-identifier-naming.ValueTemplateParameterCase: "CamelCase"
+  readability-identifier-naming.VariableCase: "aNy_CasE"
+  readability-identifier-naming.VirtualMethodCase: "camelBack"
+...

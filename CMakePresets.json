@@ -1,0 +1,87 @@
+{
+    "version": 2,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 14,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "language-standard",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_STANDARD": "99",
+                "CMAKE_C_STANDARD_REQUIRED": "ON",
+                "CMAKE_C_EXTENSIONS": "OFF",
+                "CMAKE_CXX_STANDARD": "11",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "CMAKE_CXX_EXTENSIONS": "OFF"
+            }
+        },
+        {
+            "name": "ccache",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER_LAUNCHER": "ccache",
+                "CMAKE_CXX_COMPILER_LAUNCHER": "ccache"
+            }
+        },
+        {
+            "name": "cppcheck",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_CPPCHECK": "cppcheck;--inline-suppr",
+                "CMAKE_CXX_CPPCHECK": "cppcheck;--inline-suppr"
+            }
+        },
+        {
+            "name": "clang-tidy",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_CLANG_TIDY": "clang-tidy;--header-filter=^${sourceDir}/",
+                "CMAKE_CXX_CLANG_TIDY": "clang-tidy;--header-filter=^${sourceDir}/"
+            }
+        },
+        {
+            "name": "default-build",
+            "displayName": "Default build parameters",
+            "hidden": true,
+            "generator": "Ninja",
+            "inherits": [
+                "language-standard"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/cmake/tricore_opensource_toolchain.cmake",
+                "CMAKE_EXE_LINKER_FLAGS": "-nostartfiles -mtc162 -Wl,--gc-sections -Wl,--extmap=a -Wl,-n -Wl,-T ${sourceDir}/cmake/Lcf_Gnuc_Tricore_Tc.lsl",
+                "CMAKE_C_FLAGS": "-mtc162 -Wall -Wpointer-arith -Wshadow -Wfloat-equal -Wno-unused-local-typedefs -Wextra -fno-common -fstrict-volatile-bitfields -ffunction-sections -fdata-sections",
+                "CMAKE_CXX_FLAGS": "-mtc162 -Wall -Wpointer-arith -Wshadow -Wfloat-equal -Wno-unused-local-typedefs -Wextra -fno-common -fstrict-volatile-bitfields -ffunction-sections -fdata-sections"
+            }
+        },
+        {
+            "name": "debug",
+            "displayName": "Debug",
+            "description": "Configure project in debug mode",
+            "binaryDir": "${sourceDir}/out/${presetName}",
+            "inherits": [
+                "default-build"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "warnings": {
+                "dev": true,
+                "deprecated": true
+            }
+        },
+        {
+            "name": "ci",
+            "displayName": "CI",
+            "description": "Configure project in release mode for CI pipeline",
+            "binaryDir": "${sourceDir}/out/${presetName}",
+            "inherits": [
+                "default-build"
+            ]
+        }
+    ]
+}

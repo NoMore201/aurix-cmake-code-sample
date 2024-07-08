@@ -1,0 +1,6 @@
+out/
+
+# IDE specific ignores
+**/.vscode
+
+CMakeUserPresets.json
