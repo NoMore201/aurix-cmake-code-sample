@@ -3,4 +3,8 @@ out/
 # IDE specific ignores
 **/.vscode
 
+# Clangd ignores
+.cache
+**/compile_commands.json
+
 CMakeUserPresets.json
