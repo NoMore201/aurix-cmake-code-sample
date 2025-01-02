@@ -8,7 +8,9 @@ repository and adapted to be compiled with CMake build system.
 
 This project provides configuration for building code with open source tricore
 compiler, available at
-[EEESlab/tricore-gcc-toolchain-11.3.0](https://github.com/EEESlab/tricore-gcc-toolchain-11.3.0). For any other compiler, manual configuration to
+[EEESlab/tricore-gcc-toolchain-11.3.0](https://github.com/EEESlab/tricore-gcc-toolchain-11.3.0)
+(prebuilt binaries are available [here](https://github.com/NoMore201/tricore-gcc-toolchain/releases/latest)).
+For any other compiler, manual configuration to
 match needed settings may be required.
 
 Before building, compiler executables must be available from PATH.
