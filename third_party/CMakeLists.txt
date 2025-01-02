@@ -273,8 +273,4 @@ target_include_directories(
   infineon/Libraries/iLLD/TC33A/Tricore/_PinMap/
 )
 
-# Infineon lib requires __HIGHTEC__ token to be defined when using Tricore
-# GCC, but the open source version does not provide such definition. Here
-# we force it to avoid issues
-target_compile_definitions(InfineonLib PUBLIC __HIGHTEC__)
 target_compile_features(InfineonLib PRIVATE c_std_99)

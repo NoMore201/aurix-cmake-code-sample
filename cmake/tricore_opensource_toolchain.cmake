@@ -22,3 +22,8 @@ set(CMAKE_CXX_COMPILER tricore-elf-g++)
 
 # Set this to fix errors when testing C compiler
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+
+# Infineon lib requires __HIGHTEC__ token to be defined when using Tricore
+# GCC, but the open source version does not provide such definition. Here
+# we force it to avoid issues
+add_compile_definitions(__HIGHTEC__)
