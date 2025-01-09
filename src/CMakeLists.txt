@@ -12,13 +12,13 @@ set(EXECUTABLE_NAME "${TARGET_NAME}")
 # Targets
 ##################################################################
 
-add_executable(AurixExecutable Cpu0_Main.c Blinky_LED.c)
+add_executable(AurixExecutable Cpu0_Main.c Blinky_LED.c gpio.cpp)
 target_link_libraries(AurixExecutable PRIVATE InfineonLib)
 target_include_directories(AurixExecutable PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 # Make sure a map file is generated
 target_link_options(AurixExecutable PRIVATE -Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/${EXECUTABLE_NAME}.map)
 # Set C standard for main target
-target_compile_features(AurixExecutable PRIVATE c_std_99)
+target_compile_features(AurixExecutable PRIVATE c_std_99 cxx_std_20)
 
 # force executable output name to be formatted as "EXEC_NAME.elf"
 set_target_properties(AurixExecutable PROPERTIES OUTPUT_NAME ${EXECUTABLE_NAME} SUFFIX .elf)
