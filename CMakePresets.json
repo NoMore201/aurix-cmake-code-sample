@@ -55,8 +55,8 @@
                 "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/cmake/tricore_opensource_toolchain.cmake",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "CMAKE_EXE_LINKER_FLAGS": "-nostartfiles -mtc162 -Wl,--gc-sections -Wl,--extmap=a -Wl,-n -Wl,-T ${sourceDir}/cmake/Lcf_Gnuc_Tricore_Tc.lsl",
-                "CMAKE_C_FLAGS": "-mtc162 -Wall -Wpointer-arith -Wshadow -Wfloat-equal -Wno-unused-local-typedefs -Wextra -fno-common -fstrict-volatile-bitfields -ffunction-sections -fdata-sections",
-                "CMAKE_CXX_FLAGS": "-mtc162 -Wall -Wpointer-arith -Wshadow -Wfloat-equal -Wno-unused-local-typedefs -Wextra -fno-common -fstrict-volatile-bitfields -ffunction-sections -fdata-sections"
+                "CMAKE_C_FLAGS": "-mtc162 -Wall -Wextra -Wpedantic -Wconversion -fno-common -fstrict-volatile-bitfields -ffunction-sections -fdata-sections",
+                "CMAKE_CXX_FLAGS": "-mtc162 -Wall -Wextra -Wpedantic -Wconversion -fno-common -fstrict-volatile-bitfields -ffunction-sections -fdata-sections"
             }
         },
         {

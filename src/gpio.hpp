@@ -7,7 +7,7 @@
 namespace Hal::Gpio
 {
 
-enum class Function
+enum class Function : u8
 {
     Input,
     Output
