@@ -12,7 +12,7 @@ set(EXECUTABLE_NAME "${TARGET_NAME}")
 # Targets
 ##################################################################
 
-add_executable(AurixExecutable Cpu0_Main.c Blinky_LED.c gpio.cpp)
+add_executable(AurixExecutable Cpu0_Main.cpp gpio.cpp)
 target_link_libraries(AurixExecutable PRIVATE InfineonLib)
 target_include_directories(AurixExecutable PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 # Make sure a map file is generated

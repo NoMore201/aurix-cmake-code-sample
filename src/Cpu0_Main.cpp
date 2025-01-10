@@ -35,37 +35,19 @@
  * \documents https://www.infineon.com/aurix-expert-training/TC33A_iLLD_UM_1_0_1_12_1.chm
  * \lastUpdated 2021-06-29
  *********************************************************************************************************************/
-#include "Ifx_Types.h"
-#include "IfxCpu.h"
-#include "IfxScuWdt.h"
-#include "Blinky_LED.h"
 
-IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
-// cpp initialization routine. Not needed but makes compiler happy
-void _init(void)
-{
-    
-}
+
+extern "C" {
+
+// required by Ifx_Ssw_doCppInit
+void _init(void) {}
 
 void core0_main(void)
 {
-    IfxCpu_enableInterrupts();
-    
-    /* !!WATCHDOG0 AND SAFETY WATCHDOG ARE DISABLED HERE!!
-     * Enable the watchdogs and service them periodically if it is required
-     */
-    IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
-    IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
-    
-    /* Wait for CPU sync event */
-    IfxCpu_emitEvent(&g_cpuSyncEvent);
-    IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
-    
-    initLED();  /* Initialize the LED port pin      */
-
     while(1)
     {
-        blinkLED(); /* Make the LED blink           */
     }
+}
+
 }
