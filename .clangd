@@ -1,0 +1,4 @@
+---
+CompileFlags:
+  Add: [-m32]
+  Remove: [-mtc162, -fstrict-volatile-bitfields]
